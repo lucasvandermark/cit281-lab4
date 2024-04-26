@@ -5,7 +5,7 @@ const fastify = require("fastify")();
 fastify.get("/", (request, reply) => {
   reply
     .code(200)
-    .header("Content-Type", "text/text; charset=utf-8")
+    .header("Content-Type", "text/html; charset=utf-8")
     .send("<h1>Hello from Lab 4!</h1>");
 });
 // Start server and listen to requests using Fastify
