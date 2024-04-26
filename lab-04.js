@@ -8,6 +8,14 @@ fastify.get("/", (request, reply) => {
     .header("Content-Type", "text/html; charset=utf-8")
     .send("<h1>Hello from Lab 4!</h1>");
 });
+fastify.get("/name", (request, reply) => {
+    const {first, last} = request.query
+    const name = !first || !last ? "Guest" : `${first} ${last}`
+    reply
+      .code (200)
+      .header("Content-Type", "text/html; charset=utf-8")
+      .send(`<h1>Hello, ${name}</h1>`)
+})
 // Start server and listen to requests using Fastify
 const listenIP = "localhost";
 const listenPort = 8080;
